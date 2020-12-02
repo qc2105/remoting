@@ -65,15 +65,8 @@ public final class GuiListener implements EngineListener {
     public void error(final Throwable t) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
-            @SuppressFBWarnings(value = {"DM_EXIT", "INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE"}, justification = "This is an error handler for GUI, exit is valid. Used to show errors to administrator when run with GUI.")
             public void run() {
                 LOGGER.log(SEVERE, t.getMessage(), t);
-                StringWriter sw = new StringWriter();
-                t.printStackTrace(new PrintWriter(sw));
-                JOptionPane.showMessageDialog(
-                    frame,sw.toString(),"Error",
-                    JOptionPane.ERROR_MESSAGE);
-                System.exit(-1);
             }
         });
     }
