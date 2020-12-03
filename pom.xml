@@ -32,7 +32,7 @@ THE SOFTWARE.
     <relativePath />
   </parent>
 
-  <groupId>org.jenkins-ci.main</groupId>
+  <groupId>com.qc</groupId>
   <artifactId>remoting</artifactId>
   <version>${revision}${changelist}</version>
 
